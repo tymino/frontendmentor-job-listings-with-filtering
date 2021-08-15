@@ -1,5 +1,3 @@
-import './attribution.sass';
-
 import React from 'react';
 
 const Attribution = () => {
