@@ -2,7 +2,7 @@ import React from 'react';
 
 const Attribution = () => {
   return (
-    <div className="attribution">
+    <footer className="attribution">
       Challenge by{' '}
       <a
         href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt"
@@ -18,7 +18,7 @@ const Attribution = () => {
         tymino
       </a>
       .
-    </div>
+    </footer>
   );
 };
 

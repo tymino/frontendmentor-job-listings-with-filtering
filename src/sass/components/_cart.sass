@@ -1,14 +1,60 @@
-$colorLink: hsl(228, 45%, 44%)
+.cart
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+
+  padding: $innerPadding
+  margin-bottom: 10px
+  border: 1px solid black
+
+  &__info
+  &__chips
+    display: flex
+    flex-direction: row
+
+
+.info
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  &__avatar
+    margin-right: 20px
+
+  &__describe
+
+
+.describe
+  display: grid
+  grid-template-columns: repeat(3, auto)
+  grid-template-rows: repeat(3, auto)
   
-.attribution
-  position: absolute
-  bottom: 10px
-  width: 100%
+  &__company
+    grid-area: 1 / 1 / 2 / 2
 
-  font-size: .73rem
-  text-align: center
+  &__new
+    grid-area: 1 / 2 / 2 / 3
 
-  box-sizing: border-box
+  &__featured
+    grid-area: 1 / 3 / 2 / 4
 
-  a
-    color: $colorLink
+  &__title
+    grid-area: 2 / 1 / 3 / 4
+
+  &__sub-info
+    grid-area: 3 / 1 / 4 / 4
+
+
+.sub-info
+  display: flex
+  flex-direction: row
+
+  &__data
+  &__time
+  &__type
+  &__separator
+    width: 6px
+    height: 6px
+    background-color: grey
+    border-radius: 50%
