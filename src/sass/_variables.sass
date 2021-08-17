@@ -1,3 +1,38 @@
+// Font
+$fontFamily: Spartan, sans-serif
+$fontSize: 15px
+
+// elems
+$innerPadding: 30px
+$borderRadius: 5px
+
+// Primary
+$white: hsl(0, 0%, 100%)
+$desaturatedDarkCyan: hsl(180, 29%, 50%)
+
+// Neutral
+$lightGrayishCyan: hsl(180, 52%, 96%)
+$darkGrayishCyan: hsl(180, 8%, 52%)
+$veryDarkGrayishCyan: hsl(180, 14%, 20%)
+
+// Attribution
 $colorLinkAttr: hsl(228, 45%, 44%)
 
-$innerPadding: 30px
+// mixins
+@mixin cartStyle
+  background-color: $white
+  border-radius: $borderRadius
+  box-shadow: 0 14px 15px -2px lighten($desaturatedDarkCyan,30%)
+
+@mixin chipStyle($color)
+  margin-left: 10px
+  padding: 8px 10px 4px
+  color: $white
+  font-size: .8rem
+  line-height: .8rem
+  font-weight: 700
+  text-transform: uppercase
+  text-align: center
+  vertical-align: middle
+  background-color: $color
+  border-radius: 20px

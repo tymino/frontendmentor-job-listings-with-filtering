@@ -11,19 +11,19 @@ const Cart = ({ job }) => {
         <img className="info__avatar" src={logo} alt="" />
 
         <div className="info__describe describe">
-          <div className="describe__company">{company}</div>
+          <h3 className="describe__company">{company}</h3>
 
           {job.new && <div className="describe__new">New</div>}
           {job.featured && <div className="describe__featured">Featured</div>}
 
-          <div className="describe__title">{position}</div>
+          <h2 className="describe__title">{position}</h2>
 
           <div className="describe__sub-info sub-info">
-            <div className="sub-info__data">{postedAt}</div>
+            <p className="sub-info__data">{postedAt}</p>
             <div className="sub-info__separator"></div>
-            <div className="sub-info__time">{contract}</div>
+            <p className="sub-info__time">{contract}</p>
             <div className="sub-info__separator"></div>
-            <div className="sub-info__type">{location}</div>
+            <p className="sub-info__type">{location}</p>
           </div>
         </div>
       </div>

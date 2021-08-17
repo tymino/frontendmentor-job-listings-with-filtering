@@ -1,12 +1,12 @@
 import React from 'react';
-import { Cart, ChipContainer } from './';
+import { Cart, FilterChip } from './';
 
 import jobsData from '../data.json';
 
 const MainContent = () => {
   return (
     <main className="main">
-      <ChipContainer />
+      <FilterChip />
 
       <div className="cart-container">
         {jobsData.map((job, index) => (

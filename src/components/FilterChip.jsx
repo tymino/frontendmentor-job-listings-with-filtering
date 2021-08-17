@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChipContainer = () => {
+const FilterChip = () => {
   return (
     <div className="chip-container">
       <div className="chip-list"></div>
@@ -9,4 +9,4 @@ const ChipContainer = () => {
   );
 };
 
-export default ChipContainer;
+export default FilterChip;
