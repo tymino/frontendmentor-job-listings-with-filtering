@@ -2,8 +2,24 @@ import React from 'react';
 
 import { Chip } from '.';
 
-const Cart = ({ job }) => {
-  const { logo, company, position, postedAt, contract, location, languages } = job;
+const Cart = ({
+  job: {
+    logo,
+    company,
+    position,
+    role,
+    level,
+    postedAt,
+    contract,
+    location,
+    languages,
+    tools,
+    new: newCart,
+    featured,
+  },
+  handleGetName,
+}) => {
+  const dataForChip = [role, level, ...languages, ...tools];
 
   return (
     <div className="cart">
@@ -13,8 +29,8 @@ const Cart = ({ job }) => {
         <div className="info__describe describe">
           <h3 className="describe__company">{company}</h3>
 
-          {job.new && <div className="describe__new">New</div>}
-          {job.featured && <div className="describe__featured">Featured</div>}
+          {newCart && <div className="describe__new">New</div>}
+          {featured && <div className="describe__featured">Featured</div>}
 
           <h2 className="describe__title">{position}</h2>
 
@@ -28,10 +44,9 @@ const Cart = ({ job }) => {
         </div>
       </div>
       <div className="cart__chips">
-        {languages.map((language, index) => (
-          <Chip key={`${language}-${index}`} name={language} />
+        {dataForChip.map((language, index) => (
+          <Chip key={`${language}-${index}`} name={language} handleGetName={handleGetName} />
         ))}
-        <Chip />
       </div>
     </div>
   );

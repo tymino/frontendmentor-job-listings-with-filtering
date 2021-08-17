@@ -1,8 +1,14 @@
 import React from 'react';
 
-const Chip = () => {
+const Chip = ({ name, handleGetName }) => {
+  const handleClick = () => {
+    handleGetName(name);
+  };
+
   return (
-    <div>Chip</div>
+    <div className="chip" onClick={handleClick}>
+      {name}
+    </div>
   );
 };
 

@@ -4,13 +4,19 @@ import { Cart, FilterChip } from './';
 import jobsData from '../data.json';
 
 const MainContent = () => {
+  const [chipsData, setChipsData] = React.useState([]);
+
+  const handleGetName = (name) => {
+    console.log(name);
+  };
+  
   return (
     <main className="main">
-      <FilterChip />
+      <FilterChip data={chipsData} />
 
       <div className="cart-container">
-        {jobsData.map((job, index) => (
-          <Cart key={job.id} job={job} />
+        {jobsData.map((job) => (
+          <Cart key={job.id} job={job} handleGetName={handleGetName} />
         ))}
       </div>
     </main>
