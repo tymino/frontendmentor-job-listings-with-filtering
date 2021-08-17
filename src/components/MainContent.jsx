@@ -9,7 +9,7 @@ const MainContent = () => {
   const handleGetName = (name) => {
     console.log(name);
   };
-  
+
   return (
     <main className="main">
       <FilterChip data={chipsData} />
