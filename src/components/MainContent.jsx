@@ -7,23 +7,29 @@ const MainContent = React.memo(() => {
   const [chipNames, setChipNames] = React.useState([]);
   const [jobs, setJobs] = React.useState(jobsData);
 
-  console.log(jobs);
+  const filterJob = (chips) => {
+    const actualChips = chips;
+    let filteredJobs = jobsData;
 
-  /*
-    3. Отображение карточек сделать из стейта, а не из импорта
-    4. Настроить фильтрацию
-   */
+    actualChips.forEach((chip) => {
+      filteredJobs = filteredJobs.filter((job) => {
+        return [job.role, job.level, ...job.languages, ...job.tools].includes(chip);
+      });
+    });
+
+    setChipNames(actualChips);
+    setJobs(filteredJobs);
+  };
 
   const addChipsData = (name) => {
-    if (chipNames.includes(name)) return false;
-    setChipNames([...chipNames, name]);
+    if (!chipNames.includes(name)) return filterJob([...chipNames, name]);
   };
 
   const removeChipsData = (name) => {
-    setChipNames(chipNames.filter((e) => e !== name));
+    filterJob(chipNames.filter((e) => e !== name));
   };
   const clearChipsData = () => {
-    setChipNames([]);
+    filterJob([]);
   };
 
   const handleAction = (action) => {
