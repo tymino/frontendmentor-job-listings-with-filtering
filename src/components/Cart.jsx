@@ -44,8 +44,8 @@ const Cart = ({
         </div>
       </div>
       <div className="cart__chips">
-        {dataForChip.map((language, index) => (
-          <Chip key={`${language}-${index}`} name={language} handleGetName={handleGetName} />
+        {dataForChip.map((type, index) => (
+          <Chip key={`${type}-${index}`} name={type} handleGetName={handleGetName} />
         ))}
       </div>
     </div>
