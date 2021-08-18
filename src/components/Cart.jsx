@@ -17,7 +17,7 @@ const Cart = ({
     new: newCart,
     featured,
   },
-  handleGetName,
+  handleAction,
 }) => {
   const dataForChip = [role, level, ...languages, ...tools];
 
@@ -45,7 +45,7 @@ const Cart = ({
       </div>
       <div className="cart__chips">
         {dataForChip.map((type, index) => (
-          <Chip key={`${type}-${index}`} name={type} handleGetName={handleGetName} />
+          <Chip key={`${type}-${index}`} name={type} handleAction={handleAction} />
         ))}
       </div>
     </div>

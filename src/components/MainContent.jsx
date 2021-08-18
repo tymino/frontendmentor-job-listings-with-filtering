@@ -4,31 +4,36 @@ import { Cart, FilterChip } from './';
 import jobsData from '../data.json';
 
 const MainContent = React.memo(() => {
-  const [chipsData, setChipsData] = React.useState([]);
-  // const [filteredData, setFilteredData] = React.useState(jobsData);
+  const [chipNames, setChipNames] = React.useState([]);
+  const [jobs, setJobs] = React.useState(jobsData);
+
+  console.log(jobs);
 
   /*
-    1. Настроить отображение Chip'ов из стейта.
-    2. Стили для chip доделать.
     3. Отображение карточек сделать из стейта, а не из импорта
     4. Настроить фильтрацию
    */
 
   const addChipsData = (name) => {
-    if (chipsData.includes(name)) return false;
-    setChipsData([...chipsData, name]);
+    if (chipNames.includes(name)) return false;
+    setChipNames([...chipNames, name]);
   };
 
   const removeChipsData = (name) => {
-    setChipsData(chipsData.filter((e) => e !== name));
+    setChipNames(chipNames.filter((e) => e !== name));
+  };
+  const clearChipsData = () => {
+    setChipNames([]);
   };
 
-  const handleGetName = (action) => {
+  const handleAction = (action) => {
     switch (action.type) {
       case 'ADD':
         return addChipsData(action.name);
       case 'REMOVE':
         return removeChipsData(action.name);
+      case 'CLEAR':
+        return clearChipsData();
       default:
         break;
     }
@@ -36,11 +41,11 @@ const MainContent = React.memo(() => {
 
   return (
     <main className="main">
-      <FilterChip />
+      <FilterChip chipNames={chipNames} handleAction={handleAction} withButton />
 
       <div className="cart-container">
-        {jobsData.map((job) => (
-          <Cart key={job.id} job={job} handleGetName={handleGetName} />
+        {jobs.map((job) => (
+          <Cart key={job.id} job={job} handleAction={handleAction} />
         ))}
       </div>
     </main>

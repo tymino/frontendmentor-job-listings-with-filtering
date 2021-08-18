@@ -1,31 +1,33 @@
 import React from 'react';
 
-const Chip = ({ name, handleGetName }) => {
+const Chip = ({ name, handleAction, withButton }) => {
   const handleClick = () => {
-    handleGetName({
+    handleAction({
       type: 'ADD',
       name,
     });
   };
 
   const handleRemove = () => {
-    handleGetName({
+    handleAction({
       type: 'REMOVE',
       name,
     });
   };
 
   return (
-    <div className="chip">
+    <div className="chip" id='chip'>
       <div className="chip__name" onClick={handleClick}>
         {name}
       </div>
-      <img
-        onClick={handleRemove}
-        className="chip__remove"
-        src="./assets/images/icon-remove.svg"
-        alt="remove"
-      />
+      {withButton && (
+        <img
+          onClick={handleRemove}
+          className="chip__remove"
+          src="./assets/images/icon-remove.svg"
+          alt="remove"
+        />
+      )}
     </div>
   );
 };
