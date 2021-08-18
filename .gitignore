@@ -23,11 +23,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
-#dev
-/design
-README-template.md
-README.md
-style-guide.md
-/index.html
