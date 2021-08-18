@@ -25,6 +25,7 @@
   &__chips
     display: flex
     flex-direction: row
+    flex-wrap: wrap
 
 
 .info
@@ -98,10 +99,48 @@
 
   &__data
   &__time
+    text-align: center
   &__type
+    text-align: center
   &__separator
     width: 4px
     height: 4px
     margin: 0 10px
     border-radius: 50%
     background-color: $darkGrayishCyan
+
+
+@media ( max-width: 1100px )
+  .cart
+    flex-direction: column
+    align-items: flex-start
+    max-width: 500px
+    margin: 0px auto 20px
+
+    &__info
+      width: 100%
+      padding-bottom: 10px
+      border-bottom: 2px solid $darkGrayishCyan
+      box-sizing: border-box
+
+    &__chips
+      max-width: 400px
+      margin-top: 15px
+
+@media ( max-width: 600px )
+  .cart
+    position: relative
+    margin: 40px auto 50px
+
+    &__info
+      padding-top: 20px
+
+  .info
+    &__avatar
+      position: absolute
+      top: -35px
+      left: 30px
+      margin-right: 20px
+
+      width: 70px
+      height: 70px
